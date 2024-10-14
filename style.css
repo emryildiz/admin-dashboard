@@ -1,0 +1,224 @@
+:root{
+    --title-color:#013CC6;
+    --active-color:#0B63F8;
+    --nav-item-text-color:#000;
+    --content-back-color:#E5E5E5;
+    --sidebar-back-color:#fff;
+    --place-holder-color:#ADA7A7;
+    --table-border-color:#F2F2F2;
+}
+
+body{
+    font-family: 'poppins', sans-serif;
+    display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding-top:52px;
+    min-height: 100vh;
+    background-color: var(--sidebar-back-color);
+    min-width: 230px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.sidebar h1{
+    margin-left:32px;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--title-color);
+}
+
+.sidebar nav{
+    flex: 1;
+    margin-top:100px;
+    display: flex;
+    flex-direction: column;
+    gap:42px;
+}
+
+.sidebar nav .nav-item{
+    padding-left:40px;
+    color:var(--nav-item-text-color);
+    opacity: 0.6;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    stroke:var(--nav-item-text-color);
+    fill:none;
+    font-size:16px;
+}
+.sidebar nav .nav-item:last-child{
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.sidebar nav .nav-item.active{
+    color: var(--active-color);
+    opacity: 1;
+    position: relative;
+}
+
+.sidebar nav .nav-item.active{
+    stroke:var(--active-color);
+}
+
+.sidebar nav .nav-item.active::before{
+    content: '';
+    height: 40px;
+    width: 3px;
+    left: 0;
+    top:-8px;
+    position: absolute;
+    background-color: var(--active-color);
+}
+
+/* CONTENT */
+
+.content{
+    margin-left: 230px;
+    padding: 52px 20px 20px 42px;
+    flex: 1;
+    background-color: var(--content-back-color);
+}
+
+.content input{
+    padding-left: 20px;
+    padding-top:12px;
+    padding-bottom: 12px;
+    border: 1px solid var(--place-holder-color);
+    border-radius: 3px;
+}
+
+.content input::placeholder{
+    color: var(--place-holder-color);
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container .input-icon {
+    position: absolute;
+    left: 10px; /* Resmin soldaki boşluğu */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Resmin boyutunu ayarlayın */
+    height: 20px;
+}
+
+.input-container input {
+    padding: 10px;
+    padding-left: 40px; /* İkon ile metin arasındaki boşluk */
+    height: 100%;
+}
+
+.content .upper-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .upper-bar input{
+    width: 50%;
+}
+
+.content .upper-bar .badges{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.content .upper-bar .badges button{
+    padding : 14px;
+    background-color: var(--sidebar-back-color);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.content .upper-bar .badges .profile-image{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.content .filter-wrapper{
+    margin-top:52px;
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+}
+
+.content .filter-wrapper h2{
+    font-size:24px;
+    color: var(--nav-item-text-color);
+}
+
+.content .filter-wrapper .filter-group{
+    display: flex;
+    gap:20px
+}
+.content .filter-wrapper .filter-group .filter-item{
+    flex:1;
+    font-size:16px;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.content .sales-table{
+    margin-top:40px;
+    background-color: var(--sidebar-back-color);
+    width: 100%;
+    font-size: 16px;
+}
+
+.content .sales-table .table-header{
+    display: flex;
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+.content .sales-table .table-header .table-header-item{
+    flex :5;
+    padding:15px;
+    font-weight: 600; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.content .sales-table .table-header .table-header-item:first-child{
+    flex :1;
+}
+
+.content .sales-table .table-content{
+    display: flex;
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+.content .sales-table .table-content .table-content-item{
+    flex :5;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.content .sales-table .table-content .table-content-item:first-child{
+    flex :1;
+}
+
+.content .sales-table .table-content .table-content-item.active{
+    color:var(--active-color)
+}
+
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
